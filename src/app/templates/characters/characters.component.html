@@ -2,23 +2,11 @@
   <h1 class="filters__element title remove">Personajes</h1>
 
   <div class="filters__element input">
-    <input id="search" type="text" placeholder="Buscar" [(ngModel)]="name" (change)="search()">
+    <input id="search" type="text" placeholder="Buscar" [(ngModel)]="name" (input)="search()">
     <label for="search"><icon-search></icon-search></label>
   </div>
 
-  <div class="filters__element select">
-    <mat-form-field appearance="outline">
-      <mat-label>Filtrar</mat-label>
-      <mat-select [(value)]="filterType">
-        <mat-option value="estado">Estado</mat-option>
-        <mat-option value="especie">Especie</mat-option>
-        <mat-option value="genero">Genero</mat-option>
-      </mat-select>
-      <icon-filter matSuffix></icon-filter>
-    </mat-form-field>
-  </div>
-
-  <div class="filters__element select-m" *ngIf="filterType === 'estado'">
+  <div class="filters__element select-m">
     <mat-form-field appearance="outline">
       <mat-label>Estado</mat-label>
       <mat-select [(value)]="status" (selectionChange)="search()">
@@ -31,7 +19,7 @@
     </mat-form-field>
   </div>
 
-  <div class="filters__element select-m" *ngIf="filterType === 'genero'">
+  <div class="filters__element select-m">
     <mat-form-field appearance="outline">
       <mat-label>Genero</mat-label>
       <mat-select [(value)]="gender" (selectionChange)="search()">
@@ -45,7 +33,7 @@
     </mat-form-field>
   </div>
 
-  <div class="filters__element select-m" *ngIf="filterType === 'especie'">
+  <div class="filters__element select-m">
     <mat-form-field appearance="outline">
       <mat-label>Especie</mat-label>
       <mat-select [(value)]="species" (selectionChange)="search()">
@@ -71,10 +59,14 @@ infinite-scroll
   (click)="openCharacter(character)">
   </app-character>
 
-  <div class="d-flex justify-content-center loader" *ngIf="!loading">
-    <div class="spinner-border" role="status">
+  <div class="d-flex justify-content-center loader">
+    <div class="spinner-border" role="status" [hidden]="!loading">
       <span class="visually-hidden">Loading...</span>
     </div>
+  </div>
+
+  <div class="d-flex justify-content-center nothing">
+    <p [hidden]="!nothing">No fue posible hacer tu busqueda</p>
   </div>
 </section>
 

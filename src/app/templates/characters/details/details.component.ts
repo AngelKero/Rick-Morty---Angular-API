@@ -19,7 +19,6 @@ export class DetailsComponent implements OnInit, AfterViewInit, OnChanges {
     this.like = false;
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
   }
 
   ngAfterViewInit(): void {

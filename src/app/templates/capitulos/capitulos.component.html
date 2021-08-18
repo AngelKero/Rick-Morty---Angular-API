@@ -1,0 +1,34 @@
+<section class="filters">
+  <h1 class="filters__element title">Capitulos</h1>
+
+  <div class="filters__element input">
+    <input id="search" type="text" placeholder="Nombre" [(ngModel)]="name" (input)="search()">
+    <label for="search"><icon-search></icon-search></label>
+  </div>
+
+  <div class="filters__element input">
+    <input id="search" type="text" placeholder="Codigo" [(ngModel)]="code" (input)="search()">
+    <label for="search"><icon-search></icon-search></label>
+  </div>
+</section>
+
+<section class="grid"
+infinite-scroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="0"
+(scrolled)="onScroll()">
+  <app-episodio class="character-card"
+  *ngFor="let episode of episodes"
+  [episode]="episode">
+  </app-episodio>
+
+  <div class="d-flex justify-content-center loader">
+    <div class="spinner-border" role="status" [hidden]="!loading">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center nothing">
+    <p [hidden]="!nothing">No fue posible hacer tu busqueda</p>
+  </div>
+</section>

@@ -24,10 +24,10 @@ export class CharactersComponent implements OnInit {
   private maxPages: number;
 
   public loading: boolean;
+  public nothing: boolean;
 
   public openDetailsBtn: ElementRef | undefined;
 
-  public filterType: '' | 'estado' | 'especie' | 'genero';
   public gender: '' |	'Female' | 'Male' | 'Genderless' | 'unknown';
   public status: '' |	'Alive' | 'Dead' | 'unknown';
   public species: '' |	'Alive' | 'Dead' | 'unknown';
@@ -41,7 +41,7 @@ export class CharactersComponent implements OnInit {
     this.selectedCharacter = {} as Character;
     this.maxPages = 1;
     this.loading = true;
-    this.filterType = '';
+    this.nothing = false;
     this.gender = '';
     this.status = '';
     this.species = '';
@@ -56,20 +56,25 @@ export class CharactersComponent implements OnInit {
     this.characterService.getCharacters(this.page, this.name, this.gender, this.status, this.species)
     .subscribe((data: any) => {
       this.loading = false;
+      this.nothing = false;
       const info: Info = data.info;
       const results: Character[] = data.results;
       this.maxPages = info.pages;
       this.page === 1 ? this.characters = results : this.characters.push(...results);
-    })
+    }, (__error) => {
+      this.loading = false;
+      this.nothing = true;
+    });
   }
 
   search(): void {
+    this.page = 1;
     this.characters = [];
     this.getCharacters();
   }
 
   onScroll(): void {
-    if (this.page <= this.maxPages) {
+    if (this.page < this.maxPages) {
       this.page++;
       this.getCharacters();
     }

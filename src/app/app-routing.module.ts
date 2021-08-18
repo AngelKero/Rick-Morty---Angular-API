@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./templates/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'capitulos',
+    loadChildren: () => import('./templates/capitulos/capitulos.module').then(m => m.CapitulosModule)
+  },
+  {
     path: 'personajes',
     loadChildren: () => import('./templates/characters/characters.module').then(m => m.CharactersModule)
   }
