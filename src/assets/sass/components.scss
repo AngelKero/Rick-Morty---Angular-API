@@ -19,21 +19,41 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+
+  h1{
+    margin-right: 35px;
+    margin-bottom: 0px;
+  }
 
   &__element{
     margin-right: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     &:last-child{margin-right: 0px}
+  }
+}
+
+.select{
+  @include media(small) {
+    width: 100%;
+    margin-right: 0px;
   }
 }
 
 .input{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   box-shadow: $shadow;
   background-color: white;
   overflow: hidden;
   border-radius: 5px;
   padding: 0px;
+  @include media(small) {
+    width: 100%;
+    margin-right: 0px;
+  }
 
   input{
     appearance: none;
@@ -50,4 +70,56 @@
 .modal-backdrop.show{display: none}
 .modal{
   background: rgba($color-text, 0.3);
+}
+
+mat-form-field{
+  @include text-bold;
+  color: $color-text-dark !important;
+  font-size: 16px;
+
+  @include media(small) {
+    width: 100%;
+  }
+
+  .mat-form-field-wrapper{
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+  .mat-form-field-outline{
+    background-color: white !important;
+    border-radius: 5px;
+    padding: 0px 10px !important;
+    box-shadow: $shadow !important;
+    > div {
+      border: none !important;
+    }
+  }
+
+  .mat-form-field-infix {
+    padding: 0.7em 0 0.7em 0 !important;
+  }
+  .mat-select-placeholder{
+    transform: translateY(-3px);
+  }
+
+  .mat-form-field-label-wrapper{
+    transform: translateY(-3px);
+    mat-label{
+      @include text-bold;
+      color: $color-text;
+      font-size: 14px;
+    }
+  }
+  .mat-form-field-suffix {
+    top: -.25em !important;
+    padding: 0px 2px 0px 15px;
+  }
+
+  .mat-select-arrow{
+  }
+}
+
+.cdk-overlay-container{
+  z-index: 2500;
 }

@@ -1,1 +1,3 @@
-<p>filter works!</p>
+<svg id="Filtrar" xmlns="http://www.w3.org/2000/svg" width="16.385" height="15" viewBox="0 0 16.385 15">
+  <path id="Trazado_3" data-name="Trazado 3" d="M3.639,3.949a.682.682,0,1,0,0,1.363h.545l4.91,6.135h4.089l4.91-6.135h.545a.685.685,0,0,0,.6-.34.68.68,0,0,0-.6-1.023Zm5.455,8.864v6.136l4.089-1.363V12.814Z" transform="translate(-2.946 -3.949)" fill="#98a0a6"/>
+</svg>

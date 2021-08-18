@@ -5,6 +5,59 @@
     <input id="search" type="text" placeholder="Buscar" [(ngModel)]="name" (change)="search()">
     <label for="search"><icon-search></icon-search></label>
   </div>
+
+  <div class="filters__element select">
+    <mat-form-field appearance="outline">
+      <mat-label>Filtrar</mat-label>
+      <mat-select [(value)]="filterType">
+        <mat-option value="estado">Estado</mat-option>
+        <mat-option value="especie">Especie</mat-option>
+        <mat-option value="genero">Genero</mat-option>
+      </mat-select>
+      <icon-filter matSuffix></icon-filter>
+    </mat-form-field>
+  </div>
+
+  <div class="filters__element select-m" *ngIf="filterType === 'estado'">
+    <mat-form-field appearance="outline">
+      <mat-label>Estado</mat-label>
+      <mat-select [(value)]="status" (selectionChange)="search()">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="Alive">Vivo</mat-option>
+        <mat-option value="Dead">Muerto</mat-option>
+        <mat-option value="unknown">Desconocido</mat-option>
+      </mat-select>
+      <icon-filter matSuffix></icon-filter>
+    </mat-form-field>
+  </div>
+
+  <div class="filters__element select-m" *ngIf="filterType === 'genero'">
+    <mat-form-field appearance="outline">
+      <mat-label>Genero</mat-label>
+      <mat-select [(value)]="gender" (selectionChange)="search()">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="Male">Hombre</mat-option>
+        <mat-option value="Female">Mujer</mat-option>
+        <mat-option value="Genderless">Sin género</mat-option>
+        <mat-option value="unknown">Desconocido</mat-option>
+      </mat-select>
+      <icon-filter matSuffix></icon-filter>
+    </mat-form-field>
+  </div>
+
+  <div class="filters__element select-m" *ngIf="filterType === 'especie'">
+    <mat-form-field appearance="outline">
+      <mat-label>Especie</mat-label>
+      <mat-select [(value)]="species" (selectionChange)="search()">
+        <mat-option value="">Todos</mat-option>
+        <mat-option value="Human">Humano</mat-option>
+        <mat-option value="Alien">Alien</mat-option>
+        <mat-option value="Mythological Creature">Mitologico</mat-option>
+        <mat-option value="Animal">Animal</mat-option>
+      </mat-select>
+      <icon-filter matSuffix></icon-filter>
+    </mat-form-field>
+  </div>
 </section>
 
 <section class="grid"

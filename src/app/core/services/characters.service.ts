@@ -12,7 +12,7 @@ export class CharactersService {
     private http: HttpClient
   ) { }
 
-  getCharacters(page: number, name: string) {
-    return this.http.get(`${environment.urlAPI}/character/?page=${page}&name=${name}`);
+  getCharacters(page: number, name: string, gender: string, status: string, species: string) {
+    return this.http.get(`${environment.urlAPI}/character/?page=${page}&name=${name}&gender=${gender}&status=${status}&species=${species}`);
   }
 }

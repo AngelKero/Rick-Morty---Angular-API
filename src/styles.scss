@@ -3,3 +3,6 @@
 @import "./assets/sass/helpers.scss";
 @import "./assets/sass/fonts.scss";
 @import "./assets/sass/components.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

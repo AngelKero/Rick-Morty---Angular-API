@@ -8,7 +8,20 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     margin-top: 40px;
+    padding-bottom: 80px;
     gap: 80px;
+
+    @include media(medium) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin-top: 30px;
+      gap: 60px;
+    }
+
+    @include media(small) {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      margin-top: 30px;
+      gap: 30px;
+    }
 
     .loader{
       grid-column: 1 / -1;

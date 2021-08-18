@@ -9,6 +9,8 @@ import { CharacterComponent } from './character/character.component';
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { DetailsComponent } from './details/details.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { DetailsComponent } from './details/details.component';
     CharactersRoutingModule,
     SharedModule,
     FormsModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatSelectModule,
+    MatIconModule
   ]
 })
 export class CharactersModule { }

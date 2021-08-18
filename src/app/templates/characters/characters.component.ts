@@ -27,6 +27,11 @@ export class CharactersComponent implements OnInit {
 
   public openDetailsBtn: ElementRef | undefined;
 
+  public filterType: '' | 'estado' | 'especie' | 'genero';
+  public gender: '' |	'Female' | 'Male' | 'Genderless' | 'unknown';
+  public status: '' |	'Alive' | 'Dead' | 'unknown';
+  public species: '' |	'Alive' | 'Dead' | 'unknown';
+
   constructor(
     private characterService: CharactersService
   ) {
@@ -36,6 +41,10 @@ export class CharactersComponent implements OnInit {
     this.selectedCharacter = {} as Character;
     this.maxPages = 1;
     this.loading = true;
+    this.filterType = '';
+    this.gender = '';
+    this.status = '';
+    this.species = '';
   }
 
   ngOnInit(): void {
@@ -44,7 +53,7 @@ export class CharactersComponent implements OnInit {
 
   getCharacters(): void {
     this.loading = true;
-    this.characterService.getCharacters(this.page, this.name)
+    this.characterService.getCharacters(this.page, this.name, this.gender, this.status, this.species)
     .subscribe((data: any) => {
       this.loading = false;
       const info: Info = data.info;
