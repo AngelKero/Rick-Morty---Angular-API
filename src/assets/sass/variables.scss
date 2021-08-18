@@ -1,0 +1,47 @@
+/* = Colors
+-----------------------------------------------------------------------------*/
+$color-primary:		 #17BF63;
+$color-secondary:  #0080FF;
+$color-light:      #FFFFFF;
+$color-dark:       #2B3136;
+
+$color-text:			 #727B82;
+$color-text-light: #FAFAFA;
+$color-text-dark:  #2B3136;
+
+$color-divider:		 #ECF3F9;
+$color-accent:		 #F5F7FA;
+
+$color-select-bg:	 #04f671b2;
+$color-select-text:#082e53d0;
+$color-placeholder:#727B82;
+
+$color-error:			 #F44336;
+$color-success:		 #198754;
+
+$shadow: 0px 4px 5px 2px rgba($color-secondary, 12%);
+
+/* = Size Breakpoints
+-----------------------------------------------------------------------------*/
+$screen-xs:				575px  !default;
+$screen-sm:				767px  !default;
+$screen-md:				993px  !default;
+$screen-lg:				1119px  !default;
+$screen-full:			1399px  !default;
+
+/* = Fonts
+-----------------------------------------------------------------------------*/
+$poppins: 		'Poppins', sans-serif;
+
+/* = Mixings
+-----------------------------------------------------------------------------*/
+
+@mixin text-bold{
+	font-family: $poppins;
+  font-weight: 700;
+}
+
+@mixin text-regular{
+	font-family: $poppins;
+  font-weight: 400;
+}

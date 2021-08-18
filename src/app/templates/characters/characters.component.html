@@ -1,0 +1,31 @@
+<section class="filters">
+  <h1 class="filters__element title remove">Personajes</h1>
+
+  <div class="filters__element input">
+    <input id="search" type="text" placeholder="Buscar" [(ngModel)]="name" (change)="search()">
+    <label for="search"><icon-search></icon-search></label>
+  </div>
+</section>
+
+<section class="grid"
+infinite-scroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="0"
+(scrolled)="onScroll()">
+  <app-character class="character-card"
+  *ngFor="let character of characters"
+  [character]="character"
+  (click)="openCharacter(character)">
+  </app-character>
+
+  <div class="d-flex justify-content-center loader" *ngIf="!loading">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</section>
+
+<app-details
+(open)="openDetailsBtn = $event"
+[character]="selectedCharacter">
+</app-details>

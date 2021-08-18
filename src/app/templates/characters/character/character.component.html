@@ -1,0 +1,19 @@
+<div class="image">
+  <img [src]="character.image">
+</div>
+
+<div class="info">
+  <h3 class="subtitle">{{ character.name }}</h3>
+  <button class="like" (click)="!like ? like = true : like = false"><icon-heart [active]="like"></icon-heart></button>
+  <ul class="remove">
+    <li>ESTADO<br>
+      <span>{{ character.status }}</span>
+    </li>
+    <li>ESPECIE<br>
+      <span>{{ character.species }}</span>
+    </li>
+    <li>GÉNERO<br>
+      <span>{{ character.gender }}</span>
+    </li>
+  </ul>
+</div>

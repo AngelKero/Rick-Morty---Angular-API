@@ -1,0 +1,8 @@
+@import '/src/assets/sass/variables.scss';
+:host{
+  cursor: pointer;
+  svg{
+    width: 25px;
+    fill: $color-text;
+  }
+}

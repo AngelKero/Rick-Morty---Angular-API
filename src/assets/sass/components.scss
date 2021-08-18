@@ -1,0 +1,53 @@
+.remove{
+  margin: 0px;
+  padding: 0px;
+}
+
+.title{
+  @include text-bold;
+  color: $color-text-dark;
+  font-size: 31px;
+}
+
+.subtitle{
+  @include text-bold;
+  color: $color-text-dark;
+  font-size: 18px;
+}
+
+.filters{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__element{
+    margin-right: 35px;
+    &:last-child{margin-right: 0px}
+  }
+}
+
+.input{
+  display: flex;
+  align-items: center;
+  box-shadow: $shadow;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 0px;
+
+  input{
+    appearance: none;
+    &:hover, &:active, &:focus{outline: 0px}
+    border: none;
+    background: transparent;
+    padding: 12px 20px;
+  }
+  label{
+    padding: 0px 10px;
+  }
+}
+
+.modal-backdrop.show{display: none}
+.modal{
+  background: rgba($color-text, 0.3);
+}

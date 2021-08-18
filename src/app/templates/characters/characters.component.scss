@@ -1,0 +1,17 @@
+@import '/src/assets/sass/variables.scss';
+@import '/src/assets/sass/helpers.scss';
+
+:host{
+  display: block;
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    margin-top: 40px;
+    gap: 80px;
+
+    .loader{
+      grid-column: 1 / -1;
+    }
+  }
+}

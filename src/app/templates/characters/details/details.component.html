@@ -1,0 +1,34 @@
+<!-- Button trigger modal -->
+<button #openBtn type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#details" hidden>
+  Open
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="details" tabindex="-1" aria-labelledby="detailsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+
+        <div class="image">
+          <img [src]="character.image">
+        </div>
+
+        <div class="info">
+          <div class="d-flex justify-content-between align-items-center">
+            <h3 class="subtitle remove">{{ character.name }}</h3>
+            <button class="like" (click)="!like ? like = true : like = false"><icon-heart [active]="like"></icon-heart></button>
+          </div>
+
+          <ul class="remove">
+            <li>{{ character.status }}</li>
+            <li>{{ character.species }}</li>
+            <li>{{ character.gender }}</li>
+          </ul>
+
+          <p>Richard "Rick" Sánchez es un viejo científico alcohólico que acostumbra hablar de manera vulgar y entre eructos, la mayoría de las veces tiene un rastro de saliva en la boca. Es padre de Beth Smith y el abuelo materno de Summer y Morty. Es un hombre que ha pasado gran parte de su vida viajando a través de diversas dimensiones, en el tiempo y por muchas regiones del universo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+@import './variables.scss';
+
+body{
+	@include text-regular();
+	color: $color-text;
+  background: $color-accent;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+/* =Selection
+-----------------------------------------------------------------------------*/
+::-moz-selection {
+	color: $color-select-text;
+	background: $color-select-bg;
+}
+::selection {
+	color: $color-select-text;
+	background: $color-select-bg;
+}
+
+/* =Placeholder
+-----------------------------------------------------------------------------*/
+::-webkit-input-placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+:-moz-placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+::-moz-placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+:-ms-input-placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+::-ms-input-placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+::placeholder {
+  @include text-bold();
+	color: $color-placeholder;
+}
+
+//Scroll bar
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $color-primary;
+	border-radius: 2.5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #1F5A76EE;
+}
