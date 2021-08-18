@@ -74,6 +74,7 @@ export class CharactersComponent implements OnInit {
   }
 
   onScroll(): void {
+    console.log(this.page);
     if (this.page < this.maxPages) {
       this.page++;
       this.getCharacters();
