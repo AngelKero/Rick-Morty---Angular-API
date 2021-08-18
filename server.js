@@ -10,9 +10,9 @@ const app = express();
 const app = express();
 app.use(requireHTTPS);
 
-app.use(express.static('./dist/<name-on-package.json>'));
+app.use(express.static('./dist/RickAndMorty'));
 app.get('/*', function(req, res) {
-    res.sendFile('index.html', {root: 'dist/<name-on-package.json>/'});
+    res.sendFile('index.html', {root: 'dist/RickAndMorty/'});
 });
 
 app.listen(process.env.PORT || 8080);
