@@ -32,6 +32,9 @@
     margin-top: 10px;
     margin-bottom: 10px;
     &:last-child{margin-right: 0px}
+    @include media(small) {
+      margin-right: 0px !important;
+    }
   }
 }
 
