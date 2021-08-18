@@ -5,6 +5,7 @@
 
 .title{
   @include text-bold;
+  font-weight: 700 !important;
   color: $color-text-dark;
   font-size: 31px;
 }
@@ -97,7 +98,7 @@ mat-form-field{
   }
 
   .mat-form-field-infix {
-    padding: 0.7em 0 0.7em 0 !important;
+    padding: 0.75em 0 0.75em 0 !important;
   }
   .mat-select-placeholder{
     transform: translateY(-3px);
