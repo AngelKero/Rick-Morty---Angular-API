@@ -1,29 +1,37 @@
 <div class="container">
   <img class="logo" src="assets/images/logo.png" alt="">
 
-  <nav class="site">
-    <a routerLink="inicio" class="link" routerLinkActive="link--active">
+  <nav class="site" [ngClass]="{'site--open': opened}">
+    <a routerLink="inicio" class="link" routerLinkActive="link--active"
+    (click)="opened = false">
       Inicio
     </a>
-    <a class="link">
+    <a class="link" (click)="opened = false">
       Historia
     </a>
-    <a routerLink="capitulos" class="link" routerLinkActive="link--active">
+    <a routerLink="capitulos" class="link" routerLinkActive="link--active"
+    (click)="opened = false">
       Capitulos
     </a>
-    <a routerLink="personajes" class="link" routerLinkActive="link--active">
+    <a routerLink="personajes" class="link" routerLinkActive="link--active"
+    (click)="opened = false">
       Personajes
     </a>
-    <a class="link">
+    <a class="link"
+    (click)="opened = false">
       Objetos
     </a>
-    <a class="link">
+    <a class="link"
+    (click)="opened = false">
       Dimensiones
     </a>
-    <a class="link">
+    <a class="link"
+    (click)="opened = false">
       Comunidad
     </a>
+
+    <button class="close" (click)="opened = false">&times;</button>
   </nav>
 
-  <icon-menu class="menu"></icon-menu>
+  <icon-menu class="menu" (click)="opened ? opened = false : opened = true"></icon-menu>
 </div>

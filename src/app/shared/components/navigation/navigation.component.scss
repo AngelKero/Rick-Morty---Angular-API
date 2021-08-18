@@ -21,7 +21,6 @@
       display: flex;
       align-items: center;
       @include media(medium) {display: none}
-      @include media(small) {display: none}
       .link{
         display: block;
         @include text-bold;
@@ -35,6 +34,41 @@
           text-decoration: none;
           border-bottom: 3px solid $color-secondary;
           color: $color-secondary;
+        }
+      }
+      @include media(small) {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 3000;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $color-accent;
+        width: 100%;
+        height: 100%;
+        transform: translateX(100%);
+        transition: transform .7s ease-in-out;
+        .link{margin-left: 0px;}
+
+        .close{
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: $color-error;
+          border: none;
+          border-radius: 50%;
+          appearance: none;
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          font-size: 20px;
+        }
+
+        &--open{
+          transform: translateX(0%);
         }
       }
     }
