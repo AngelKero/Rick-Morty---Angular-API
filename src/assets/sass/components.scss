@@ -21,13 +21,13 @@
   align-items: center;
   flex-wrap: wrap;
 
-  h1{
-    margin-right: 35px;
+  h1, h2, h3, h4{
+    margin-right: 35px !important;
     margin-bottom: 0px;
   }
 
   &__element{
-    margin-right: 35px;
+    margin-right: 35px !important;
     margin-top: 10px;
     margin-bottom: 10px;
     &:last-child{margin-right: 0px}
