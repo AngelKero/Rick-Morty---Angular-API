@@ -6,7 +6,7 @@
     <label for="search"><icon-search></icon-search></label>
   </div>
 
-  <div class="filters__element select-m">
+  <div class="filters__element select">
     <mat-form-field appearance="outline">
       <mat-label>Estado</mat-label>
       <mat-select [(value)]="status" (selectionChange)="search()">
@@ -19,7 +19,7 @@
     </mat-form-field>
   </div>
 
-  <div class="filters__element select-m">
+  <div class="filters__element select">
     <mat-form-field appearance="outline">
       <mat-label>Genero</mat-label>
       <mat-select [(value)]="gender" (selectionChange)="search()">
@@ -33,7 +33,7 @@
     </mat-form-field>
   </div>
 
-  <div class="filters__element select-m">
+  <div class="filters__element select">
     <mat-form-field appearance="outline">
       <mat-label>Especie</mat-label>
       <mat-select [(value)]="species" (selectionChange)="search()">
